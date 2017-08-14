@@ -15,5 +15,15 @@ define(['jquery','cookie','template'], function ($,ck,template) {
 		var html = template('tlp_avatar', JSON.parse($.cookie('tcInfo')));
 		$('.aside>.profile').html(html)
 	}
+   $('#logout').on('click',function(){
+       $.ajax({
+		   url:'/api/logout',
+		   type:'post',
+		   success: ()=>{
+			   alert('退出成功');
+			   location.href = '/login'
+		   }
 
+	   })
+   })
 })
