@@ -12,3 +12,7 @@
 	///views/dashboard/login
 		 window.location.href= '/login';
 	}
+	if(location.pathname!='/login'&&location.pathname!='./dashboard/login'&&location.pathname!='./views/dashboard/login'){
+		var html = template('tlp_avatar',JSON.parse($.cookie('tcInfo')));
+		$('.aside>.profile').html(html)
+	}
